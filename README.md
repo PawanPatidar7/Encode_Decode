@@ -23,3 +23,6 @@ This is a simple web application example for encoding and decoding text, with a 
 - Click "Decode" to decode encoded text.
 - The result will appear in the "Result will appear here" textarea.
 - Use the "Clear" button to clear both text areas.
+
+## View:
+![image](https://github.com/PawanPatidar7/Encode_Decode/assets/135605821/e56b131a-b8f2-48db-b10e-02869ca1776b)
