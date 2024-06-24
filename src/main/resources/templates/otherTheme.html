@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Encode Decode</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        color: #fff;
+        margin: 20px;
+        text-align: center;
+    }
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        animation: fadeIn 2s ease-in-out;
+    }
+    form {
+        display: inline-block;
+        text-align: left;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        animation: slideIn 1.5s ease-out;
+    }
+    textarea {
+        width: calc(100% - 20px);
+        height: 100px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 1em;
+        color: #333;
+        animation: grow 1s ease-in-out;
+    }
+    button {
+        margin-right: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(0, 255, 128);
+        color: rgb(0, 0, 0);
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #feb47b;
+    }
+    .container {
+        margin-top: 20px;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes slideIn {
+        from { transform: translateY(-50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes grow {
+        from { transform: scale(0.9); }
+        to { transform: scale(1); }
+    }
+</style>
+</head>
+<body>
+    <h1>Encode Decode</h1>
+    <form th:action="@{/process}" method="post">
+        <textarea id="inputText" name="inputText" placeholder="Enter text to encode or decode"></textarea>
+        <textarea id="outputText" name="outputText" th:text="${outputtext}" placeholder="Result will appear here" readonly></textarea>
+        <br>
+        <button type="submit" name="action" value="encode">Encode</button>
+        <button type="submit" name="action" value="decode">Decode</button>
+    </form>
+    <br>
+    <div class="container">
+        <button onclick="clearText()">Clear</button>
+    </div>
+    <script>  
+        function clearText() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('outputText').value = '';
+        }
+        
+    </script>
+</body>
+</html>
